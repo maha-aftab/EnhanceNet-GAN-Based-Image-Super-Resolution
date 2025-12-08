@@ -1,4 +1,6 @@
-numpy 
-PIL
-ISR
-Streamlit
+torch
+torchvision
+super-image
+pillow
+streamlit
+opencv-python
