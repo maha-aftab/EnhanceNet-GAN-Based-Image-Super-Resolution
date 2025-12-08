@@ -1,13 +1,28 @@
-# EnhanceNet - GAN-Based Image Super-Resolution
+# EnhanceNet - GAN-Based Image Super-Resolution & Deblurring
 
-The web app generates Super Resolution images from low-resolution inputs using deep learning. Various traditional techniques for image upscaling result in distorted or reduced visual quality images. Deep Learning provides better solutions to get optimized images. This project uses the EDSR (Enhanced Deep Super-Resolution) model, a state-of-the-art super-resolution network.
+The web app generates Super Resolution images from low-resolution inputs and fixes blurred images using advanced deep learning models. Traditional techniques for image upscaling result in distorted or reduced visual quality. This project combines multiple state-of-the-art models and enhancement techniques to deliver superior results.
 
 ## Features
 
-- **Web Interface**: Upload and enhance images through an easy-to-use Streamlit interface
-- **High Quality**: Uses EDSR model for superior image quality
-- **Fast Processing**: Optimized for quick inference
-- **Multiple Formats**: Supports JPG, PNG, and JPEG formats
+- **🚀 Multiple Enhancement Modes**:
+  - **Standard**: Fast processing with EDSR model for general upscaling
+  - **High Quality**: MSRN model for superior detail preservation
+  - **Deblur + Upscale**: Aggressive deblurring with unsharp masking and sharpening
+  
+- **📏 Flexible Upscaling**: Choose 2x, 3x, or 4x upscaling factors
+
+- **🔧 Advanced Processing**:
+  - Intelligent detail reconstruction
+  - Unsharp masking for deblurring
+  - Automatic sharpness and contrast enhancement
+  - Side-by-side before/after comparison
+  
+- **🎨 User-Friendly Interface**: 
+  - Easy-to-use Streamlit web interface
+  - Real-time preview with original and enhanced images
+  - Download enhanced images directly
+  
+- **📁 Multiple Formats**: Supports JPG, PNG, and JPEG formats
 
 ## Requirements
 
@@ -77,12 +92,27 @@ jupyter notebook srgan_training.ipynb
 
 ## Technical Details
 
-- **Model**: EDSR (Enhanced Deep Super-Resolution)
-- **Framework**: PyTorch
-- **Upscaling Factor**: 2x (configurable)
+### Models
+- **EDSR (Enhanced Deep Super-Resolution)**: Fast and efficient model for general upscaling
+- **MSRN (Multi-Scale Residual Network)**: Advanced model with better detail preservation
+
+### Enhancement Techniques
+- **Super-Resolution**: Deep learning-based upscaling (2x, 3x, or 4x)
+- **Unsharp Masking**: Advanced deblurring technique for fixing blurry images
+- **Adaptive Sharpening**: Intelligent edge enhancement
+- **Contrast Optimization**: Automatic contrast adjustment for better clarity
+
+### Technical Stack
+- **Framework**: PyTorch with torchvision
+- **Image Processing**: OpenCV, PIL (Pillow)
+- **Web Interface**: Streamlit
 - **Pre-trained weights**: From Hugging Face Hub
-- On first run, the model will automatically download pre-trained weights (~10MB)
-- Processing time depends on image size and your hardware
+
+### Performance
+- First run downloads model weights (~10-20MB depending on mode)
+- Processing time: 2-10 seconds for 500x500 images (varies by hardware and mode)
+- GPU acceleration supported (CUDA/Metal on Apple Silicon)
+- Subsequent runs are faster with cached models
 
 ## Notes
 
