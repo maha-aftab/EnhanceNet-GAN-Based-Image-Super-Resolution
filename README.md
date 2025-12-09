@@ -90,6 +90,9 @@ For experimentation or training:
 jupyter notebook srgan_training.ipynb
 ```
 
+## Demo link
+https://www.loom.com/share/7703a64ddf454b6ab4985724b1a84bb9
+
 ## Technical Details
 
 ### Models
